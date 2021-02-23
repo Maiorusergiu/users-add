@@ -7,7 +7,7 @@ import { ListComponent } from './pages/list/list.component';
 import { UsersComponent } from './users.component';
 import { HomeComponent } from './components/home/home.component';
 import { SharedModule } from '../../shared/shared.module';
-import { MaterialModule } from '../../material-module/material-module.module';
+
 
 
 
@@ -20,11 +20,9 @@ import { MaterialModule } from '../../material-module/material-module.module';
     CommonModule,
     UsersRoutingModule,
     SharedModule,
-    MaterialModule
   ],
   exports: [
     UsersComponent,
-    MaterialModule
   ]
 })
 export class UsersModule { }
