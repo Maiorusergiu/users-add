@@ -1,0 +1,8 @@
+.manage:hover {
+    cursor: pointer;
+    color: green;
+}
+
+.manage {
+    width: 300px;
+}
