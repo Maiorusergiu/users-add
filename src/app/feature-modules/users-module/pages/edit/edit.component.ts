@@ -16,17 +16,17 @@ export class EditComponent implements OnInit {
   ) { }
   
   userEdit = new FormGroup({
-    userName: new FormControl(''),
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
+    username: new FormControl(''),
+    firstname: new FormControl(''),
+    lastname: new FormControl(''),
   })
   ngOnInit(): void {
     console.log(this.router.snapshot.params.id);
     this.service.userId(this.router.snapshot.params.id).subscribe((result) => {
       this.userEdit = new FormGroup({
-        userName: new FormControl(result['userName']),
-        firstName: new FormControl(result['firstName']),
-        lastName: new FormControl(result['lastName']),
+        username: new FormControl(result['username']),
+        firstname: new FormControl(result['firstname']),
+        lastname: new FormControl(result['lastname']),
       })
   })
   
@@ -34,6 +34,7 @@ export class EditComponent implements OnInit {
 onUpdate() {
   this.service.updateUser(this.router.snapshot.params.id,this.userEdit.value).subscribe((result) => {
     console.log(result, "User updated succesfully");
+    this.userEdit.reset();
   })
  }
  

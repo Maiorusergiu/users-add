@@ -28,6 +28,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return getUsers();
                 case url.match(/\/users\/\d+$/) && method === 'GET':
                     return getUserById();
+                case url.match(/\/users\/\d+$/) && method === 'PUT':
+                    return updateUser();
                 case url.match(/\/users\/\d+$/) && method === 'DELETE':
                     return deleteUser();
                 default:
@@ -63,6 +65,17 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 lastName: user.lastName,
                 token: 'fake-jwt-token'
             })
+        }
+        function updateUser() {
+
+            let params = body;
+            let user = users.find(x => x.id === idFromUrl());
+
+            // update and save user
+            Object.assign(user, params);
+            localStorage.setItem('users', JSON.stringify(users));
+
+            return ok();
         }
 
         function getUsers() {
