@@ -1,5 +1,5 @@
-<h1 class="title">Edit User!</h1>
-<form [formGroup]="userEdit" (ngSubmit)="onUpdate()">
+<h1 class="title" style="text-align: center;">Edit User!</h1>
+<form [formGroup]="userEdit" (ngSubmit)="onUpdate()" style="width: 250px; margin: 0 auto;">
     <div class="form-group">
         <label for="username">User Name</label>
         <input type="text" formControlName="username" class="form-control" />

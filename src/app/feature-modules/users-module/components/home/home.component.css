@@ -1,8 +1,17 @@
-.manage:hover {
+.manageUsers {
+    width: 300px;
+}
+
+.manageUsers:hover {
     cursor: pointer;
     color: green;
 }
 
-.manage {
+.manageOrders {
     width: 300px;
+}
+
+.manageOrders:hover {
+    cursor: pointer;
+    color: green;
 }

@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { UsersModule } from './feature-modules/users-module/users.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { OrdersModule } from './feature-modules/orders-module/orders.module';
+import { ProductsModule } from './feature-modules/products-module/products.module';
 
 
 
@@ -22,7 +24,9 @@ import { BrowserModule } from '@angular/platform-browser';
     BrowserModule,
     AppRoutingModule,
     UsersModule,
-    SharedModule
+    SharedModule,
+    OrdersModule,
+    ProductsModule
     
   ],
   providers: [fakeBackendProvider],

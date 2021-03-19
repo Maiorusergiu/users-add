@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup,FormControl } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/User.model';
@@ -10,12 +10,11 @@ import { User } from '../../models/User.model';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  @Input() user: User
   //userForm: FormGroup;
   userForm: FormGroup;
   
   constructor(private formBuilder: FormBuilder,
-    private service: UserService,) { }
+    private service: UserService) { }
    
 
   ngOnInit(): void {

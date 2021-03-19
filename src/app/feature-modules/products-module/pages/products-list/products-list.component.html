@@ -1,0 +1,35 @@
+<h2 *ngIf="user">Welcome {{user.username}}!</h2>
+<button style="float: right;
+background-color: #e6e6e6;
+margin-right: 40px;
+margin-top: 10px;
+border-radius: 10px;
+color: black">
+
+    <a class="nav-item nav-link" style="cursor: pointer" routerLink="/products/cart" style="color: black;">
+        <img src="/assets/cart.png" style="width: 25px; margin-right: 5px;">Check your cart</a>
+</button>
+
+
+<div class="products" style="display: inline-flex;
+flex-direction: row;
+flex-wrap: wrap;">
+
+    <div class="firstRow" *ngFor="let product of products">
+
+
+
+        <div class=" card " style="width: 18rem;">
+            <img src="/assets/laptop.jpg " class="card-img-top ">
+            <div class="card-body " style="background-color: #80808054;">
+                <h5 class="card-title ">{{product.idProduct}}</h5>
+                <span><strong>Description</strong></span>
+                <p class="card-text ">{{product.nameProduct}}</p>
+                <span><strong>Price</strong></span>
+                <p>{{product.priceProduct}}$</p>
+                <button class="btn btn-primary " (click)="addToCart(product)">Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+</div>

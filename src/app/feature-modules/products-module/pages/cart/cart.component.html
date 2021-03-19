@@ -1,0 +1,16 @@
+<div class="cart" *ngIf="user">
+    <table style="width:100%">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        <tr *ngFor="let p of products">
+            <td>{{p.idProduct}}</td>
+            <td>{{p.nameProduct}}</td>
+            <td>{{p.priceProduct}}</td>
+            <button type="button" class="btn btn-outline-danger" (click)="remove(p.idProduct)">Delete</button>
+        </tr>
+    </table>
+    <h5 style="margin-top: 100px;">Total price:{{totalPrice}}</h5>
+</div>

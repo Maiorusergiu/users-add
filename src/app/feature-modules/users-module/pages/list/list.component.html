@@ -11,8 +11,12 @@
         <td>{{user.username}}</td>
         <td>{{user.firstname}}</td>
         <td>{{user.lastname}}</td>
-        <button mat-button routerLink="/user/edit/{{user.id}}">Edit</button>
+        <button type="button" class="btn btn-primary" routerLink="/user/edit/{{user.id}}">Edit</button>
         <button type="button" class="btn btn-outline-danger" (click)="delete(user.id)">Delete</button>
+        <button type="button" class="btn btn-success" (click)="activate(user.id)" style="margin-left: 10px;">Activate</button>
+
 
     </tr>
+
 </table>
+<button type="button" class="btn btn-outline-danger" (click)="deActivate()" style="text-align: center; margin-top: 100px;">Deactivate User</button>

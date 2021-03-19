@@ -1,0 +1,65 @@
+<h1 class="title" style="text-align: center;">Make an order!</h1>
+<form #dataForm="ngForm" (ngSubmit)="onSubmit(dataForm)" style="width: 250px; margin: 0 auto;">
+
+
+    <div class="form-group">
+
+        <label>User</label>
+        <select name="user" #user="ngModel" [(ngModel)]="dataForm.user" type="text" class="form-control">
+            <option value = "">--Select User--</option>
+            <option *ngFor = "let user of users" value = "{{users.id}}">{{user.username}}</option>
+        </select>
+
+
+    </div>
+
+
+
+    <div class="form-group">
+
+        <label>Product</label>
+        <select name="nameProduct" #nameProduct="ngModel" [(ngModel)]="dataForm.nameProduct" type="text" class="form-control">
+            <option value = "">--Select Product--</option>
+            <option *ngFor = "let product of products" value = "{{products.id}}">{{product.nameProduct}}</option>
+        </select>
+
+
+    </div>
+    <div class="form-group">
+
+        <label>Price of the Product</label>
+        <input name="priceProduct" #priceProduct="ngModel" [(ngModel)]="dataForm.priceProduct" type="text" class="form-control" readonly/>
+    </div>
+
+    <div class="form-group">
+
+        <label>Quantity</label>
+        <select name="quantity" #quantity="ngModel" [(ngModel)]="dataForm.quantity" type="text" class="form-control">
+            <option value = "">--Select Quantity--</option>
+            <option value = "1">1</option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+        </select>
+
+
+    </div>
+
+    <div class="form-group">
+
+        <label>Payment Method</label>
+        <select name="payMethod" #payMethod="ngModel" [(ngModel)]="dataForm.payMethod" type="text" class="form-control">
+            <option value = "">--Select Payment Method--</option>
+            <option value = "Cash">Cash</option>
+            <option value = "Card">Card</option>
+        </select>
+
+
+    </div>
+    <div class="form-group">
+
+        <label>Total Price</label>
+        <input name="totalPrice" #priceProduct="ngModel" [(ngModel)]="dataForm.totalPrice" type="text" class="form-control" readonly/>
+    </div>
+
+
+</form>
